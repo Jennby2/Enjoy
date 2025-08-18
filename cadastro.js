@@ -25,9 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     feedbackRegistro.textContent = 'Usuário cadastrado com sucesso! Prossiga para preencher sua ficha.';
                     feedbackRegistro.style.color = 'green';
                     usuarioLogado = usuario;
-                    registerForm.style.display = 'none';
-                    fichaContent.style.display = 'block';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Redireciona para perfil.html
+                    setTimeout(() => window.location.assign('perfil.html'), 1200);
                 } else {
                     feedbackRegistro.textContent = data.message || 'Erro ao registrar!';
                     feedbackRegistro.style.color = 'red';
