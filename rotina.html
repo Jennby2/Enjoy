@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotina & Dieta Personalizada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="rotina.css">
+</head>
+<body>
+  <div class="rotina-container">
+    <div class="motivacional">🌟 Viva sua melhor versão todos os dias! 🌟</div>
+    <h2>Minha Rotina & Dieta</h2>
+
+    <nav class="abas-nav">
+      <button class="aba-btn" onclick="mostrarAba('rotina')">Rotina</button>
+      <button class="aba-btn" onclick="mostrarAba('dieta')">Dieta Personalizada</button>
+    </nav>
+
+    <div id="aba-rotina" class="aba-conteudo">
+      <section id="resumoDados"></section>
+
+      <section id="dicasAlimentares">
+        <h3>Dicas de Alimentação e Saúde</h3>
+        <ul id="listaDicas"></ul>
+      </section>
+
+      <section id="atividadesFisicas">
+        <h3>Atividades Físicas</h3>
+        <div><strong>Manhã:</strong> <span id="atividadeManha"></span></div>
+        <div><strong>Tarde:</strong> <span id="atividadeTarde"></span></div>
+        <div><strong>Noite:</strong> <span id="atividadeNoite"></span></div>
+      </section>
+
+      <section id="lembretes">
+        <h3>Lembretes do Dia</h3>
+        <ul>
+          <li>08:00 - Comece o dia com energia! 💡</li>
+          <li>13:00 - Hidrate-se e movimente-se após o almoço!</li>
+          <li>20:00 - Relaxe, faça alongamentos e tenha uma ótima noite. 😴</li>
+        </ul>
+      </section>
+
+      <section id="tarefas">
+        <h3>Minhas 10 Tarefas do Dia</h3>
+        <ul id="listaTarefas"></ul>
+        <button id="adicionarTarefa">Adicionar Tarefa</button>
+      </section>
+
+      <section id="calendario">
+        <h3>Calendário Semanal</h3>
+        <div id="calendarioSemanal"></div>
+      </section>
+
+      <section id="historico">
+        <h3>Histórico de Progresso</h3>
+        <canvas id="graficoProgresso" width="320" height="120"></canvas>
+      </section>
+
+      <section id="alertas">
+        <h3>Alertas de Conquista</h3>
+        <button id="testarAlerta">Testar Alerta Sonoro/Vibração</button>
+      </section>
+
+      <section id="medalhas">
+        <h3>Minhas Conquistas</h3>
+        <div id="medalhasUsuario"></div>
+      </section>
+
+      <section id="fotosProgresso">
+        <h3>Fotos do Meu Progresso</h3>
+        <label for="uploadFoto">Adicionar fotos do progresso:</label>
+        <input type="file" id="uploadFoto" accept="image/*" multiple title="Selecione uma ou mais fotos do progresso" placeholder="Selecione fotos">
+        <div id="galeriaFotos"></div>
+      </section>
+
+      <section id="receitas">
+        <h3>Receitas Saudáveis do Dia</h3>
+        <ul id="listaReceitas"></ul>
+      </section>
+    </div>
+
+    <div id="aba-dieta" class="aba-conteudo">
+      <section id="dietaPersonalizada">
+        <h3>Sua Dieta Personalizada</h3>
+        <form id="formDieta">
+          <label for="objetivoDieta">Objetivo:</label>
+          <select id="objetivoDieta">
+            <option value="emagrecer">Emagrecer</option>
+            <option value="ganharMassa">Ganhar Massa</option>
+            <option value="manterPeso">Manter Peso</option>
+            <option value="outro">Outro</option>
+          </select>
+
+          <label for="preferencias">Preferências Alimentares:</label>
+          <input type="text" id="preferencias" placeholder="Ex: vegetariana, vegana, sem lactose...">
+
+          <label for="restricoes">Restrições:</label>
+          <input type="text" id="restricoes" placeholder="Ex: glúten, lactose, açúcar...">
+
+          <label for="calorias">Meta de Calorias Diárias:</label>
+          <input type="number" id="calorias" placeholder="Ex: 2000">
+
+          <label for="refeicoes">Divisão das Refeições:</label>
+          <textarea id="refeicoes" placeholder="Ex: Café da manhã, almoço, jantar, lanches..."></textarea>
+
+          <button type="submit">Salvar Dieta</button>
+        </form>
+        <div id="dietaSalva"></div>
+      </section>
+    </div>
+
+    <button class="btn-ir-perfil" onclick="window.location.assign('perfil.html')">Ir para Perfil</button>
+  </div>
+ 
+  <script src="rotina.js"></script>
+</body>
+</html>

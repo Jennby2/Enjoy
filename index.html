@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Enjoy you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="motivacional">Bem-vindo(a)! Sua jornada saudável começa aqui. </div>
+    <h2>Entrar no Sistema</h2>
+    <form id="loginForm">
+      <label for="usuario">Usuário</label>
+      <input type="text" id="usuario" placeholder="Digite seu usuário" required autocomplete="username">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="Digite sua senha" required autocomplete="current-password">
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="login-footer">
+      Seu progresso é importante. <span class="vamos-juntos">Vamos juntos!</span>
+      <br>
+      <button type="button" onclick="window.location.assign('registro.html')" class="btn-nao-cadastro">Não tenho cadastro</button>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

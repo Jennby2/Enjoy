@@ -1,0 +1,372 @@
+/* Paleta: Roxo, Laranja, Branco, Tons Pastel */
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #f3e5f5 0%, #ffe0b2 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.rotina-container {
+  background: #fff;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px 32px 32px 32px;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(186,104,200,0.18);
+  border: 2.5px solid #ff980022;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.motivacional {
+  background: linear-gradient(90deg, #f3e5f5 60%, #ffe0b2 100%);
+  color: #8e24aa;
+  font-size: 1.18rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  padding: 16px 12px 12px 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  box-shadow: 0 2px 12px #ba68c811;
+}
+
+h2 {
+  text-align: center;
+  color: #ff9800;
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-align: left;
+  color: #8e24aa;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+section {
+  margin-bottom: 32px;
+  background: #fff7fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #ba68c811;
+  padding: 22px 18px 16px 18px;
+  transition: box-shadow 0.2s;
+}
+
+section:hover {
+  box-shadow: 0 4px 24px #ff980033;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8e24aa;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px 13px;
+  border-radius: 10px;
+  border: 1.5px solid #ffb74d;
+  box-sizing: border-box;
+  font-size: 1.08rem;
+  background: #fff7fa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #8e24aa;
+  outline: none;
+  box-shadow: 0 0 0 2px #8e24aa33;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+button, .btn-ir-perfil, #btnWhatsapp, #adicionarTarefa, #alertas button {
+  background: linear-gradient(90deg, #8e24aa 60%, #ff9800 100%);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.18rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px #ff980022;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  padding: 14px 0;
+}
+
+button:hover, .btn-ir-perfil:hover, #btnWhatsapp:hover, #adicionarTarefa:hover, #alertas button:hover {
+  background: linear-gradient(90deg, #ff9800 60%, #8e24aa 100%);
+  box-shadow: 0 4px 18px #8e24aa33;
+}
+
+#calendarioSemanal {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0 0 0;
+  gap: 8px;
+}
+#calendarioSemanal div {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: #f3e5f5;
+  color: #8e24aa;
+  font-weight: 700;
+  font-size: 1.08rem;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 6px #ba68c811;
+}
+#calendarioSemanal div[style*="background: linear-gradient"] {
+  background: linear-gradient(90deg, #ff9800 60%, #8e24aa 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 10px #ff980022;
+}
+
+#graficoProgresso {
+  display: block;
+  margin: 0 auto 12px auto;
+  background: #fff7fa;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #ba68c811;
+  max-width: 100%;
+}
+
+#tema select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ce93d8;
+  background: #fff;
+  color: #8e24aa;
+  font-size: 1.08rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+#alertas button {
+  margin-top: 10px;
+}
+
+#medalhasUsuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 1.18rem;
+  color: #8e24aa;
+  background: #f3e5f5;
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 1px 6px #ba68c811;
+}
+
+#fotosProgresso input[type="file"] {
+  margin-bottom: 12px;
+}
+#galeriaFotos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+#galeriaFotos img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ff9800;
+  box-shadow: 0 2px 10px #ff980022;
+}
+
+#listaReceitas {
+  padding-left: 18px;
+}
+#listaReceitas li {
+  background: #f3e5f5;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  color: #8e24aa;
+  font-weight: 600;
+  box-shadow: 0 2px 6px #ba68c811;
+}
+
+ul {
+  padding-left: 22px;
+  margin-bottom: 0;
+}
+
+#listaTarefas li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background: #ffe0b2;
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: 0 2px 6px #ff980011;
+}
+
+#listaTarefas input[type="text"] {
+  flex: 1;
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #ce93d8;
+  margin-right: 10px;
+  background: #fff;
+  font-size: 1.08rem;
+}
+
+#listaTarefas button {
+  background: #8e24aa;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px #ba68c822;
+}
+#listaTarefas button:hover {
+  background: #ff9800;
+}
+
+#adicionarTarefa {
+  width: 100%;
+  margin-top: 12px;
+}
+
+#respostasQuestionario {
+  background: #ffe0b2;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #8e24aa;
+  font-size: 1.08rem;
+  margin-top: 10px;
+  box-shadow: 0 1px 6px #ff980022;
+}
+
+@media (max-width: 700px) {
+  .rotina-container {
+    max-width: 98vw;
+    padding: 18px 2vw;
+  }
+  section {
+    padding: 12px 4vw;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  button, .btn-ir-perfil, #btnWhatsapp, #adicionarTarefa, #alertas button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+/* Dark mode */
+body.modo-escuro {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%) !important;
+  color: #e0ffe7 !important;
+}
+
+body.modo-escuro .rotina-container {
+  background: #232526 !important;
+  border-color: #128c7e44 !important;
+  box-shadow: 0 8px 32px #128c7e22;
+}
+
+body.modo-escuro .motivacional {
+  background: linear-gradient(90deg, #128c7e33 60%, #25d36633 100%) !important;
+  color: #25d366 !important;
+  box-shadow: 0 2px 12px #25d36622;
+}
+
+body.modo-escuro h2,
+body.modo-escuro h3 {
+  color: #25d366 !important;
+}
+
+body.modo-escuro section {
+  background: #2c2f34 !important;
+  box-shadow: 0 2px 12px #128c7e22;
+}
+
+body.modo-escuro ul,
+body.modo-escuro li,
+body.modo-escuro label {
+  color: #e0ffe7 !important;
+}
+
+body.modo-escuro #calendarioSemanal div {
+  background: #128c7e22 !important;
+  color: #e0ffe7 !important;
+}
+body.modo-escuro #calendarioSemanal div[style*="background: linear-gradient"] {
+  background: linear-gradient(90deg, #128c7e 60%, #25d366 100%) !important;
+  color: #fff !important;
+}
+
+body.modo-escuro #graficoProgresso {
+  background: #232526 !important;
+}
+
+body.modo-escuro #listaTarefas li,
+body.modo-escuro #listaReceitas li {
+  background: #232526 !important;
+  color: #25d366 !important;
+}
+
+body.modo-escuro #listaTarefas input[type="text"] {
+  background: #2c2f34 !important;
+  color: #e0ffe7 !important;
+  border: 1px solid #25d366 !important;
+}
+
+body.modo-escuro #listaTarefas button,
+body.modo-escuro #adicionarTarefa,
+body.modo-escuro #alertas button {
+  background: linear-gradient(90deg, #128c7e 60%, #25d366 100%) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+body.modo-escuro #medalhasUsuario {
+  color: #25d366 !important;
+}
+
+body.modo-escuro #galeriaFotos img {
+  border: 2px solid #128c7e !important;
+  box-shadow: 0 1px 4px #128c7e22;
+}
+
+body.modo-escuro #fotosProgresso input[type="file"] {
+  background: #2c2f34 !important;
+  color: #e0ffe7 !important;
+  border: 1px solid #25d366 !important;
+}

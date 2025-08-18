@@ -1,0 +1,114 @@
+/* login.css */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #f3e5f5 0%, #ffe0b2 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  background: #fff;
+  max-width: 420px;
+  margin: 60px auto 30px auto;
+  padding: 38px 30px 30px 30px;
+  border-radius: 22px;
+  box-shadow: 0 4px 28px rgba(255,152,0,0.13);
+  border: 2px solid #8e24aa22;
+  position: relative;
+  overflow: hidden;
+}
+
+.motivacional {
+  background: linear-gradient(90deg, #f3e5f5 60%, #ffe0b2 100%);
+  color: #ff9800;
+  font-size: 1.12rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 12px 10px 10px 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 6px #ff980011;
+}
+
+h2 {
+  text-align: center;
+  color: #ff9800;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  color: #8e24aa;
+  font-size: 1.04rem;
+  font-weight: 600;
+}
+
+input, button {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px 13px;
+  border-radius: 8px;
+  border: 1.5px solid #ffb74d;
+  box-sizing: border-box;
+  font-size: 1.08rem;
+  background: #fff7fa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #8e24aa;
+  outline: none;
+  box-shadow: 0 0 0 2px #8e24aa33;
+}
+
+button {
+  background: linear-gradient(90deg, #8e24aa 60%, #ff9800 100%);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.18rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px #ff980022;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ff9800 60%, #8e24aa 100%);
+  box-shadow: 0 4px 18px #8e24aa33;
+}
+
+button[type="button"] {
+  margin-top: 12px;
+}
+
+.login-footer {
+  text-align: center;
+  color: #8e24aa;
+  font-size: 1.04rem;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    max-width: 98vw;
+    padding: 16px 4vw;
+  }
+  input, button {
+    font-size: 1rem;
+    padding: 10px 6px;
+  }
+}
