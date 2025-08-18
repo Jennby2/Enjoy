@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 // Conexão com o banco de dados MySQL
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: '127.0.0.1',
   user: 'root',
   password: '2005',
   database: 'mydb', // Verifique se o nome do banco está correto
@@ -179,3 +179,4 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 
 });
+
