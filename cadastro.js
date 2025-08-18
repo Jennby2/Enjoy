@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     usuarioLogado = usuario;
                     registerForm.style.display = 'none';
                     fichaContent.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
                     feedbackRegistro.textContent = data.message || 'Erro ao registrar!';
                     feedbackRegistro.style.color = 'red';
