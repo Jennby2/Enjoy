@@ -8,12 +8,11 @@
 </head>
 <body>
   <div class="ficha-container">
+    <h2>Perfil do Usuário</h2>
     <div id="perfilDados"></div>
     <div id="fichaContent" style="display:none;">
       <h2>Ficha do Usuário</h2>
       <form id="fichaForm" enctype="multipart/form-data">
-        <label for="id">ID do Usuário</label>
-        <input type="text" id="id" readonly placeholder="Será preenchido automaticamente">
         <label for="fotoPerfil">Foto de Perfil</label>
         <input type="file" id="fotoPerfil" accept="image/*">
         <div id="fotoPreview"></div>
@@ -94,5 +93,26 @@
   </div>
   <script src="perfil.js"></script>
   <script src="cadastro.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const pesoInput = document.getElementById('peso');
+  const alturaInput = document.getElementById('altura');
+  const imcInput = document.getElementById('imc');
+
+  function calcularIMC() {
+    const peso = parseFloat(pesoInput.value);
+    const altura = parseFloat(alturaInput.value) / 100; // altura em metros
+    if (peso > 0 && altura > 0) {
+      const imc = peso / (altura * altura);
+      imcInput.value = imc.toFixed(2);
+    } else {
+      imcInput.value = '';
+    }
+  }
+
+  pesoInput.addEventListener('input', calcularIMC);
+  alturaInput.addEventListener('input', calcularIMC);
+});
+</script>
 </body>
 </html>
