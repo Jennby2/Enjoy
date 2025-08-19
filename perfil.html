@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="perfil.css">
 </head>
 <body>
-  <div class="ficha-container">
-    <div id="perfilDados"></div>
-    <div id="fichaContent">
+    <div id="fichaContent" style="display:none;">
       <h2>Ficha do Usuário</h2>
       <form id="fichaForm" enctype="multipart/form-data">
+        <label for="fotoPerfil">Foto de Perfil</label>
+        <input type="file" id="fotoPerfil" accept="image/*">
+        <div id="fotoPreview"></div>
         <label for="nome">Nome</label>
         <input type="text" id="nome" required placeholder="Digite seu nome">
-
         <label for="genero">Gênero</label>
         <select id="genero" required>
           <option value="">Selecione o gênero</option>
@@ -22,19 +22,53 @@
           <option>Masculino</option>
           <option>Outro</option>
         </select>
-
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" id="dataNascimento" required>
-
-        <label for="email">E-mail</label>
+        <label for="email">Email</label>
         <input type="email" id="email" required placeholder="Digite seu e-mail">
-
         <label for="peso">Peso (kg)</label>
-        <input type="number" id="peso" step="0.1" min="1" required placeholder="Ex: 70.5">
-
+        <input type="number" id="peso" required placeholder="Ex: 75.5">
         <label for="altura">Altura (cm)</label>
-        <input type="number" id="altura" step="0.1" min="30" required placeholder="Ex: 170">
-
+        <input type="number" id="altura" required placeholder="Ex: 175">
+        <label for="imc">IMC</label>
+        <input type="text" id="imc" readonly placeholder="Calculado automaticamente">
+        <label for="pressao">Pressão Arterial</label>
+        <input type="text" id="pressao" placeholder="Ex: 120/80">
+        <label for="frequenciaCardiaca">Frequência Cardíaca (bpm)</label>
+        <input type="number" id="frequenciaCardiaca" placeholder="Ex: 70">
+        <label for="diagnosticos">Diagnósticos de Saúde</label>
+        <textarea id="diagnosticos" placeholder="Ex: Hipertensão, Diabetes..."></textarea>
+        <label for="biotipo">Biotipo</label>
+        <select id="biotipo">
+          <option value="">Selecione o biotipo</option>
+          <option>Ectomorfo</option>
+          <option>Mesomorfo</option>
+          <option>Endomorfo</option>
+        </select>
+        <label for="nivelAtividade">Nível de Atividade Física</label>
+        <select id="nivelAtividade">
+          <option value="">Selecione o nível</option>
+          <option>Sedentário</option>
+          <option>Leve (1-2x semana)</option>
+          <option>Moderado (3-4x semana)</option>
+          <option>Ativo (5+x semana)</option>
+        </select>
+        <label for="tempoDisponivel">Tempo disponível para exercícios (min/dia)</label>
+        <input type="number" id="tempoDisponivel" placeholder="Ex: 60">
+        <label for="horarioPreferido">Horário preferido</label>
+        <input type="text" id="horarioPreferido" placeholder="Ex: Manhã, Noite...">
+        <label for="diasSemana">Dias da semana para se exercitar</label>
+        <input type="text" id="diasSemana" placeholder="Ex: Seg, Qua, Sex">
+        <label for="metaMental">Meta Mental</label>
+        <textarea id="metaMental" placeholder="O que você busca alcançar mentalmente?"></textarea>
+        <label for="medicamentos">Medicamentos de uso contínuo</label>
+        <input type="text" id="medicamentos" placeholder="Ex: Aspirina, Metformina...">
+        <label for="preferenciasAlimentares">Preferências Alimentares</label>
+        <input type="text" id="preferenciasAlimentares" placeholder="Ex: vegetariana, vegana, sem lactose...">
+        <label for="restricoesAlimentares">Restrições Alimentares</label>
+        <input type="text" id="restricoesAlimentares" placeholder="Ex: glúten, lactose, açúcar...">
+        <label for="alergias">Alergias</label>
+        <input type="text" id="alergias" placeholder="Ex: amendoim, frutos do mar...">
         <label for="objetivo">Objetivo</label>
         <select id="objetivo" required>
           <option value="">Selecione o objetivo</option>
@@ -43,11 +77,12 @@
           <option>Saúde</option>
           <option>Outro</option>
         </select>
-
-        <label for="fotoPerfil">Foto de Perfil</label>
-        <input type="file" id="fotoPerfil" accept="image/*">
-        <div id="fotoPreview"></div>
-
+        <label for="observacoes">Observações</label>
+        <textarea id="observacoes" placeholder="Alguma informação adicional?"></textarea>
+        <label>
+          <input type="checkbox" id="aceiteTermos" required>
+          Li e aceito os <a href="termos.html" target="_blank">termos de uso</a> e a <a href="privacidade.html" target="_blank">política de privacidade</a>.
+        </label>
         <button type="submit" id="btnSalvar">Salvar Ficha</button>
         <div id="feedbackFicha"></div>
       </form>
