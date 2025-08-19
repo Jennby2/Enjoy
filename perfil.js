@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const fichaContent = document.getElementById('fichaContent');
       if (!data.success || !data.ficha) {
         perfilDados.innerHTML = '<p>Ficha não encontrada. Preencha sua ficha abaixo:</p>';
-        fichaContent.style.display = 'block'; // Mostra o formulário
+        fichaContent.style.display = 'block';
       } else {
-        // Exibe os dados da ficha
         perfilDados.innerHTML = `
+          <h3>Dados do Perfil</h3>
           <div style="text-align:center;">
             ${data.ficha.fotoPerfil ? `<img src="${data.ficha.fotoPerfil}" alt="Foto de Perfil" style="width:120px;height:120px;border-radius:50%;margin-bottom:12px;border:3px solid #8e24aa;">` : ''}
           </div>
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <p><strong>Altura:</strong> ${data.ficha.altura} cm</p>
           <p><strong>Objetivo:</strong> ${data.ficha.objetivo}</p>
         `;
-        fichaContent.style.display = 'none'; // Esconde o formulário
+        fichaContent.style.display = 'none';
       }
     });
 });
