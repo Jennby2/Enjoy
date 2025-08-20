@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <div style="text-align:center;">
             ${data.ficha.fotoPerfil ? `<img src="${data.ficha.fotoPerfil}" alt="Foto de Perfil" style="width:120px;height:120px;border-radius:50%;margin-bottom:12px;border:3px solid #8e24aa;">` : ''}
           </div>
-          <p><strong>ID:</strong> ${data.ficha.id}</p>
           <p><strong>Nome:</strong> ${data.ficha.nome}</p>
           <p><strong>Gênero:</strong> ${data.ficha.genero}</p>
           <p><strong>Data de Nascimento:</strong> ${data.ficha.dataNascimento}</p>
@@ -32,5 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 });
+
 
 
