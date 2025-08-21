@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -30,15 +31,15 @@ connection.connect(err => {
 
 // Rota de registro de usuário
 app.post('/api/register', (req, res) => {
-  const { usuario, senha } = req.body;
-  if (!usuario || !senha) {
-    return res.json({ success: false, message: 'Usuário e senha são obrigatórios.' });
+  const { nome, senha } = req.body;
+  if (!nome || !senha) {
+    return res.json({ success: false, message: 'Nome e senha são obrigatórios.' });
   }
 
-  // Primeiro, verifica se o usuário já existe
+  // Primeiro, verifica se o nome já existe
   connection.query(
-    'SELECT * FROM usuarios WHERE usuario = ?',
-    [usuario],
+    'SELECT * FROM usuarios WHERE nome = ?',
+    [nome],
     (err, results) => {
       if (err) {
         console.error('Erro na consulta de usuário:', err);
@@ -49,7 +50,7 @@ app.post('/api/register', (req, res) => {
         return res.json({ success: false, message: 'Nome de usuário já cadastrado.' });
       }
 
-      // Se o usuário não existe, faz o hash da senha
+      // Se o nome não existe, faz o hash da senha
       bcrypt.hash(senha, saltRounds, (err, hash) => {
         if (err) {
           console.error('Erro ao fazer hash da senha:', err);
@@ -58,8 +59,8 @@ app.post('/api/register', (req, res) => {
 
         // Insere o novo usuário com a senha hasheada
         connection.query(
-          'INSERT INTO usuarios (usuario, senha) VALUES (?, ?)',
-          [usuario, hash], // Salva o hash da senha
+          'INSERT INTO usuarios (nome, senha) VALUES (?, ?)',
+          [nome, hash], // Salva o hash da senha
           (err2) => {
             if (err2) {
               console.error('Erro ao cadastrar usuário:', err2);
@@ -75,15 +76,15 @@ app.post('/api/register', (req, res) => {
 
 // Rota de login de usuário
 app.post('/api/login', (req, res) => {
-  const { usuario, senha } = req.body;
+  const { nome, senha } = req.body;
   
-  if (!usuario || !senha) {
-    return res.json({ success: false, message: 'Usuário e senha são obrigatórios.' });
+  if (!nome || !senha) {
+    return res.json({ success: false, message: 'Nome e senha são obrigatórios.' });
   }
 
   connection.query(
-    'SELECT * FROM usuarios WHERE usuario = ?',
-    [usuario],
+    'SELECT * FROM usuarios WHERE nome = ?',
+    [nome],
     (err, results) => {
       if (err) {
         console.error('Erro na consulta de login:', err);
@@ -91,7 +92,7 @@ app.post('/api/login', (req, res) => {
       }
       
       if (results.length === 0) {
-        return res.json({ success: false, message: 'Usuário ou senha inválidos.' });
+        return res.json({ success: false, message: 'Nome ou senha inválidos.' });
       }
 
       const user = results[0];
@@ -105,7 +106,7 @@ app.post('/api/login', (req, res) => {
         if (result) {
           res.json({ success: true, message: 'Login bem-sucedido!' });
         } else {
-          res.json({ success: false, message: 'Usuário ou senha inválidos.' });
+          res.json({ success: false, message: 'Nome ou senha inválidos.' });
         }
       });
     }
@@ -115,13 +116,13 @@ app.post('/api/login', (req, res) => {
 // Rota de cadastro de ficha
 app.post('/api/ficha', (req, res) => {
   const ficha = req.body;
-  if (!ficha.usuario) {
-    return res.json({ success: false, message: 'Usuário é obrigatório.' });
+  if (!ficha.nome) {
+    return res.json({ success: false, message: 'Nome é obrigatório.' });
   }
 
   connection.query(
-    'SELECT * FROM fichas WHERE usuario = ?',
-    [ficha.usuario],
+    'SELECT * FROM fichas WHERE nome = ?',
+    [ficha.nome],
     (err, results) => {
       if (err) {
         console.error('Erro na consulta de ficha existente:', err);
@@ -134,10 +135,10 @@ app.post('/api/ficha', (req, res) => {
 
       if (fichaExistente) {
         // Atualiza a ficha existente
-        const campos = Object.keys(ficha).filter(k => k !== 'usuario');
+        const campos = Object.keys(ficha).filter(k => k !== 'nome');
         const valores = campos.map(k => ficha[k]);
-        sql = `UPDATE fichas SET ${campos.map(c => `${c}=?`).join(', ')} WHERE usuario=?`;
-        values = [...valores, ficha.usuario];
+        sql = `UPDATE fichas SET ${campos.map(c => `${c}=?`).join(', ')} WHERE nome=?`;
+        values = [...valores, ficha.nome];
       } else {
         // Insere uma nova ficha
         sql = 'INSERT INTO fichas SET ?';
@@ -156,10 +157,10 @@ app.post('/api/ficha', (req, res) => {
 });
 
 // Rota de busca de ficha do usuário
-app.get('/api/ficha/:usuario', (req, res) => {
+app.get('/api/ficha/:nome', (req, res) => {
   connection.query(
-    'SELECT * FROM fichas WHERE usuario = ?',
-    [req.params.usuario],
+    'SELECT * FROM fichas WHERE nome = ?',
+    [req.params.nome],
     (err, results) => {
       if (err) {
         console.error('Erro na busca de ficha:', err);
