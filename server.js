@@ -116,7 +116,7 @@ app.post('/api/login', (req, res) => {
 app.post('/api/ficha', (req, res) => {
   const ficha = req.body;
   if (!ficha.usuario) {
-    return res.json({ success: false, message: 'ID do usuário é obrigatório.' });
+    return res.json({ success: false, message: 'Usuário é obrigatório.' });
   }
 
   connection.query(
@@ -179,4 +179,3 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 
 });
-
